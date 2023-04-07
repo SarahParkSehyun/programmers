@@ -1,7 +1,6 @@
 def in_range(nx,ny,n):
      return 0<=nx and nx<n and 0<=ny and ny<n
 def solution(park, routes):
-    print(park)
     answer = []
     op_dict={
         "N":0,
@@ -15,6 +14,7 @@ def solution(park, routes):
         if 'S' in park[i]:
             x,y=i,park[i].index('S')
     for i in range(len(routes)):
+        f_x,f_y=x,y
         Flag=True
         for j in range(int(routes[i][-1])):
             nx,ny=x+dx[op_dict[routes[i][0]]],y+dy[op_dict[routes[i][0]]]
@@ -23,8 +23,10 @@ def solution(park, routes):
                 continue
             else:
                 x,y=nx,ny
+        if not Flag or not in_range(x,y,len(park[0])) or park[x][y]=='X':
+            x,y=f_x,f_y
     answer.append(x)
     answer.append(y)
     return answer
 
-print(solution(["SOO","OXX","OOO"],["E 2","S 2","W 1"]))
+print(solution(["OSO", "OOO", "OXO", "OOO"],["E 2","S 3","W 1"]))
