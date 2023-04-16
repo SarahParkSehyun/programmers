@@ -1,3 +1,4 @@
+#
 def solution(today, terms, privacies):
     answer = []
     today=today.split(".")
