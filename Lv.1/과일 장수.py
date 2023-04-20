@@ -11,3 +11,4 @@ def solution(k, m, score):
     return answer*m
 
 print(solution(3,4,[1, 2, 3, 1, 2, 3, 1]))
+
