@@ -1,4 +1,4 @@
-def solution(X, Y):
+'''def solution(X, Y):
     letter_lst=[]
     x_dict,y_dict={},{}
     for letter in X:
@@ -21,7 +21,21 @@ def solution(X, Y):
     if list(set(letter_lst))[0]=="0":
         return "0"
     else:
-        return -1
+        return -1'''
+from collections import Counter
+
+def solution(X, Y):
+    answer=''
+    x_counter=Counter(X)
+    y_counter=Counter(Y)
+    for i in range(9,-1,-1):
+        answer+=(str(i)*min(x_counter[str(i)],y_counter[str(i)]))
+    if answer=='':
+        return '-1'
+    elif len(answer)==answer.count('0'):
+        return '0'
+    else:
+        return answer
 
 
 print(solution("5525","1255"))
