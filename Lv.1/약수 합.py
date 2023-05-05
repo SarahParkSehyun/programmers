@@ -7,5 +7,3 @@ def solution(n):
             if i!=n//i:
                 answer+=n//i
     return answer
-
-print(solution(12))
