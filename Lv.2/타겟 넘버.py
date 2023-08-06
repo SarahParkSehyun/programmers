@@ -15,4 +15,6 @@ def solution(numbers, target):
     find_target(0,0)
     return answer
 
-print(solution([1, 1, 1, 1], 3)) 
+print(solution([1, 1, 1, 1], 3))
+
+#DFS이자 백트래킹
